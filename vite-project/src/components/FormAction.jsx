@@ -20,10 +20,7 @@ const FormAction = ({ onFormSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Pass the form data to the parent component (onFormSubmit callback)
     onFormSubmit(formData);
-
-    // Clear form data and set submitted state
     setFormData({
       name: '',
       age: '',
@@ -31,39 +28,74 @@ const FormAction = ({ onFormSubmit }) => {
       address: '',
     });
     setSubmitted(true);
-
-    // Reset the submitted state after a delay (to show the message for a short period)
     setTimeout(() => {
       setSubmitted(false);
-    }, 3000); // 3000 milliseconds = 3 seconds
+    }, 3000);
   };
 
   return (
-    <div>
+    <div className="container mt-4">
       {isSubmitted ? (
-        <div>
-          <p>Form submitted successfully!</p>
-          {/* You can add additional content or redirect the user after submission */}
+        <div className="alert alert-success" role="alert">
+          Form submitted successfully!
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
-          <label>
-            Name:
-            <input type="text" name="name" value={formData.name} onChange={handleChange} />
-          </label>
-          <label>
-            Age:
-            <input type="text" name="age" value={formData.age} onChange={handleChange} />
-          </label>
-          <label>
-            Email:
-            <input type="email" name="email" value={formData.email} onChange={handleChange} />
-          </label>
-          <label>
-            Address:
-            <input type="text" name="address" value={formData.address} onChange={handleChange} />
-          </label>
-          <button type="submit">Submit</button>
+          <div className="mb-3">
+            <label htmlFor="name" className="form-label">
+              Name:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="age" className="form-label">
+              Age:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="age"
+              name="age"
+              value={formData.age}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label">
+              Email:
+            </label>
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="address" className="form-label">
+              Address:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="address"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
         </form>
       )}
     </div>

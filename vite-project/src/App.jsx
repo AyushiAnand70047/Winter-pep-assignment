@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import FormAction from './components/FormAction';
-import './App.css';
 
 function App() {
   const [user, setUser] = useState(null);
