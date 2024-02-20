@@ -6,6 +6,7 @@ In the project directory:
 #### npm install
 #### npm install bootstrap
 #### npm install bootstrap@5 bootstrap-icons
+
 Run the vite project:
 #### npm run dev
 
@@ -34,3 +35,17 @@ Integrates the Navbar, Home, and FormAction components.
 ### 3. Entry Point (index.js):
 Bootstrap Integration:
 Imports Bootstrap CSS to apply styling.
+
+## Challenges Faced:
+#### Integration of Bootstrap:
+Challenge: Ensuring Bootstrap is correctly installed and imported.
+Solution: Used npm to install Bootstrap and imported it in the entry point.
+#### React Router Configuration:
+Challenge: Configuring routes with react-router-dom.
+Solution: Defined routes using Route components and specified the corresponding elements.
+#### Styling Challenges:
+Challenge: Balancing aesthetics and responsiveness.
+Solution: Utilized Bootstrap classes for a responsive layout and styling. Adjusted margins and spacing as needed.
+#### State Management:
+Challenge: Managing state for user information and form submissions.
+Solution: Utilized React state hooks (useState) to manage state and passed callbacks to update the state.
